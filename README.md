@@ -72,6 +72,9 @@ Principais rotas da API:
 O script.js é responsável pelo gerenciamento das requisições e pelo processamento das operações da API.
 
 ## Fotos do projeto
+![Eventos Climáticos](./photos/foto1.png)
+![Eventos Climáticos](./photos/foto2.png)
+![Eventos Climáticos](./photos/foto3.png)
 
 
 ## Como executar o projeto
