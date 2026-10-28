@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Eventos Climáticos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="pagina-login">
+
+    <main class="login-container">
+        <section class="login-lateral">
+            <div class="logo-clima">EC</div>
+            <h1>Eventos<br>Climáticos</h1>
+            <p>Acompanhe os eventos climáticos da sua região em um só lugar.</p>
+            <div class="decoracao-clima">
+                <span>☁</span>
+                <span>☀</span>
+                <span>↗</span>
+            </div>
+        </section>
+
+        <section class="login-formulario">
+            <div class="login-conteudo">
+                <span class="texto-superior">BEM-VINDO(A)</span>
+                <h2>Faça seu login</h2>
+                <p class="descricao">Entre com seus dados para acessar o sistema.</p>
+
+                <form id="formLogin">
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="seuemail@exemplo.com"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha">Senha</label>
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite sua senha"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <p id="mensagemLogin" class="mensagem" aria-live="polite"></p>
+
+                    <button type="submit" class="botao botao-principal botao-login">
+                        Entrar <span>→</span>
+                    </button>
+                </form>
+
+                <p class="rodape-login">Eventos Climáticos · Monitoramento e informação</p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

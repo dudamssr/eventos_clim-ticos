@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Climáticos | Início</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="pagina-home">
+
+    <header class="cabecalho">
+        <a href="index.html" class="marca">
+            <div class="logo-clima logo-pequeno">EC</div>
+            <span>Eventos <strong>Climáticos</strong></span>
+        </a>
+
+        <div class="usuario">
+            <div class="avatar" id="avatarUsuario">A</div>
+            <span id="nomeUsuario">Ana Silva</span>
+            <button id="botaoSair" class="botao-sair">Sair ↗</button>
+        </div>
+    </header>
+
+    <main class="conteudo">
+        <section class="boas-vindas">
+            <div>
+                <span class="texto-superior">PAINEL DE MONITORAMENTO</span>
+                <h1>Eventos climáticos</h1>
+                <p>Consulte e gerencie os eventos registrados na sua região.</p>
+            </div>
+
+            <button id="botaoAdicionar" class="botao botao-principal">
+                <span class="mais">+</span> Adicionar evento
+            </button>
+        </section>
+
+        <section class="resumo">
+            <div class="resumo-card">
+                <div class="resumo-icone icone-verde">☁</div>
+                <div>
+                    <span>Total de eventos</span>
+                    <strong id="totalEventos">0</strong>
+                </div>
+            </div>
+
+            <div class="resumo-card">
+                <div class="resumo-icone icone-laranja">↗</div>
+                <div>
+                    <span>Municípios monitorados</span>
+                    <strong id="totalMunicipios">0</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-eventos">
+            <div class="secao-cabecalho">
+                <div>
+                    <h2>Eventos cadastrados</h2>
+                    <p>Lista de ocorrências registradas no sistema.</p>
+                </div>
+                <span class="contador" id="contadorEventos">00 registros</span>
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Município</th>
+                            <th>Evento climático</th>
+                            <th>Status</th>
+                            <th class="coluna-acoes">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaEventos">
+                        <!-- Os eventos serão inseridos pelo JavaScript. -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="mensagemVazia" class="mensagem-vazia" hidden>
+                <span>☁</span>
+                <h3>Nenhum evento cadastrado</h3>
+                <p>Adicione um evento para começar a monitorar.</p>
+            </div>
+        </section>
+
+        <footer class="rodape">
+            <span>Eventos Climáticos</span>
+            <span>Informação para uma região mais preparada.</span>
+        </footer>
+    </main>
+
+    <!-- Janela de cadastro e edição -->
+    <div id="modalEvento" class="modal" hidden>
+        <div
+            class="modal-conteudo"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="tituloModal"
+        >
+            <div class="modal-cabecalho">
+                <div>
+                    <span class="texto-superior">GERENCIAMENTO</span>
+                    <h2 id="tituloModal">Adicionar evento</h2>
+                </div>
+
+                <button
+                    type="button"
+                    id="fecharModal"
+                    class="botao-fechar"
+                    aria-label="Fechar"
+                >×</button>
+            </div>
+
+            <form id="formEvento">
+
+                <div class="campo">
+                    <label for="municipio">Município</label>
+                    <input
+                        type="text"
+                        id="municipio"
+                        name="cidade"
+                        placeholder="Ex.: Campinas"
+                        maxlength="80"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="tipoEvento">Evento climático</label>
+                    <select id="tipoEvento" name="tipoEvento" required>
+                        <option value="">Selecione um evento</option>
+                        <option value="Tempestade">Tempestade</option>
+                        <option value="Queimada">Queimada</option>
+                        <option value="Geada">Geada</option>
+                        <option value="Enchente">Enchente</option>
+                        <option value="Seca">Seca</option>
+                        <option value="Deslizamento">Deslizamento</option>
+                        <option value="Granizo">Granizo</option>
+                        <option value="Onda de calor">Onda de calor</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="temperaturaMaxima">
+                        Temperatura máxima (°C)
+                    </label>
+                    <input
+                        type="number"
+                        id="temperaturaMaxima"
+                        name="temperaturaMaxima"
+                        placeholder="Ex.: 38"
+                        step="any"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="nivelImpacto">Nível de impacto</label>
+                    <select
+                        id="nivelImpacto"
+                        name="nivelImpacto"
+                        required
+                    >
+                        <option value="">Selecione o nível</option>
+                        <option value="Baixo">Baixo</option>
+                        <option value="Médio">Médio</option>
+                        <option value="Alto">Alto</option>
+                    </select>
+                </div>
+
+                <div class="modal-acoes">
+                    <button
+                        type="button"
+                        id="cancelarModal"
+                        class="botao botao-secundario"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button type="submit" class="botao botao-principal">
+                        Salvar evento
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
