@@ -71,6 +71,9 @@ Principais rotas da API:
 
 O script.js é responsável pelo gerenciamento das requisições e pelo processamento das operações da API.
 
+## Fotos do projeto
+
+
 ## Como executar o projeto
 
 ### Pré-requisitos
